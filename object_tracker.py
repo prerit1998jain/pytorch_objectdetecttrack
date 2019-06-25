@@ -46,14 +46,14 @@ def detect_image(img):
         detections = utils.non_max_suppression(detections, 80, conf_thres, nms_thres)
     return detections[0]
 
-videopath = '../data/video/overpass.mp4'
+videopath = './data/video/car_moving.mp4'
 
 import cv2
 from sort import *
 colors=[(255,0,0),(0,255,0),(0,0,255),(255,0,255),(128,0,0),(0,128,0),(0,0,128),(128,0,128),(128,128,0),(0,128,128)]
 
 vid = cv2.VideoCapture(videopath)
-mot_tracker = Sort() 
+mot_tracker = Sort()
 
 cv2.namedWindow('Stream',cv2.WINDOW_NORMAL)
 cv2.resizeWindow('Stream', (800,600))
